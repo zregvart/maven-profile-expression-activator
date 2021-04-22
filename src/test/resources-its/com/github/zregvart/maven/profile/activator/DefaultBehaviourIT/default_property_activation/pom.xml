@@ -1,0 +1,60 @@
+<!--
+~   Licensed under the Apache License, Version 2.0 (the "License");
+~   you may not use this file except in compliance with the License.
+~   You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~   Unless required by applicable law or agreed to in writing, software
+~   distributed under the License is distributed on an "AS IS" BASIS,
+~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~   See the License for the specific language governing permissions and
+~   limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.zregvart.maven.profile.activator</groupId>
+  <artifactId>no_property_activation</artifactId>
+  <version>1</version>
+  <profiles>
+    <profile>
+      <id>not-active</id>
+      <activation />
+    </profile>
+    <profile>
+      <id>active-by-setting</id>
+      <activation>
+        <property>
+          <name>set</name>
+        </property>
+      </activation>
+    </profile>
+    <profile>
+      <id>active-by-value</id>
+      <activation>
+        <property>
+          <name>value</name>
+          <value>expected</value>
+        </property>
+      </activation>
+    </profile>
+    <profile>
+      <id>active-by-value-not-matching</id>
+      <activation>
+        <property>
+          <name>value</name>
+          <value>!matching</value>
+        </property>
+      </activation>
+    </profile>
+    <profile>
+      <id>active-by-property-not-present</id>
+      <activation>
+        <property>
+          <name>!missing</name>
+        </property>
+      </activation>
+    </profile>
+  </profiles>
+</project>
