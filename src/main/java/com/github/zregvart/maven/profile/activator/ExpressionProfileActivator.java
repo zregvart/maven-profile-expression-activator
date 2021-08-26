@@ -106,6 +106,8 @@ public class ExpressionProfileActivator implements ProfileActivator {
         vars.putAll(context.getProjectProperties());
         vars.putAll(context.getUserProperties());
         vars.put("$profile", profile);
+        // allow properties, that are not valid MVEL identifiers to be accessed by $vars['my.property']
+        vars.put("$vars", vars);
 
         return MVEL.evalToBoolean(expression, context, vars);
     }

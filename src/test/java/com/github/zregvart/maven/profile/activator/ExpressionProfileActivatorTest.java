@@ -82,7 +82,7 @@ public class ExpressionProfileActivatorTest {
         final Activation activation = new Activation();
         final ActivationProperty property = new ActivationProperty();
         property.setName("expression:test");
-        property.setValue("a == 'system' && b == 'project' && c == 'user'");
+        property.setValue("a == 'system' && b == 'project' && c == 'user' && $vars['a'] == 'system' && $vars['b'] == 'project' && $vars['c'] == 'user'");
         activation.setProperty(property);
         profile.setActivation(activation);
 

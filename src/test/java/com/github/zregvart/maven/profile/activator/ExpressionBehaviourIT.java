@@ -36,7 +36,7 @@ public class ExpressionBehaviourIT {
     })
     public void default_property_activation(final MavenExecutionResult result) {
         assertThat(result).isSuccessful();
-        assertActiveProfilesFrom(result).containsOnly("active-by-simple-expression", "active-by-property-value", "active-by-property-defined");
+        assertActiveProfilesFrom(result).containsOnly("active-by-simple-expression", "active-by-vars-expression", "active-by-property-value", "active-by-property-defined");
     }
 
 }
