@@ -13,6 +13,7 @@
  */
 package com.github.zregvart.maven.profile.activator;
 
+import java.io.File;
 import java.util.Properties;
 
 import org.apache.maven.model.Activation;
@@ -93,6 +94,8 @@ public class ExpressionProfileActivatorTest {
         context.setProjectProperties(abc(null, "project", "project"));
         // high priority, overrides project and system properties
         context.setUserProperties(abc(null, null, "user"));
+        // basedir must be set
+        context.setProjectDirectory(new File("."));
 
         final ModelProblemCollector problems = mock(ModelProblemCollector.class);
 

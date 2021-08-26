@@ -108,6 +108,8 @@ public class ExpressionProfileActivator implements ProfileActivator {
         vars.put("$profile", profile);
         // allow properties, that are not valid MVEL identifiers to be accessed by $vars['my.property']
         vars.put("$vars", vars);
+        // add $basedir
+        vars.put("$basedir", context.getProjectDirectory().getAbsolutePath());
 
         return MVEL.evalToBoolean(expression, context, vars);
     }
