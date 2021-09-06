@@ -37,14 +37,14 @@
   </scm>
   <properties>
     <org.apache.maven.model.version>3.8.1</org.apache.maven.model.version>
-    <com.soebes.itf.jupiter.extension.version>0.10.0-SNAPSHOT</com.soebes.itf.jupiter.extension.version>
+    <com.soebes.itf.jupiter.extension.version>0.11.0</com.soebes.itf.jupiter.extension.version>
   </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.7.1</version>
+        <version>5.7.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
