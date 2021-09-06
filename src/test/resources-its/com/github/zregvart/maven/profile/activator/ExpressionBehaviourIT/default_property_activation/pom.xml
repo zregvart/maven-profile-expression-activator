@@ -17,6 +17,9 @@
   <groupId>com.github.zregvart.maven.profile.activator</groupId>
   <artifactId>no_property_activation</artifactId>
   <version>1</version>
+  <properties>
+    <my.property>my value</my.property>
+  </properties>
   <profiles>
     <profile>
       <id>active-by-simple-expression</id>
@@ -69,6 +72,24 @@
         <property>
           <name>expression:undefined</name>
           <value>isdef undefined</value>
+        </property>
+      </activation>
+    </profile>
+    <profile>
+      <id>active-by-property-expression</id>
+      <activation>
+        <property>
+          <name>expression:my value</name>
+          <value>projectProperties['my.property']</value>
+        </property>
+      </activation>
+    </profile>
+    <profile>
+      <id>active-by-project-directory-value</id>
+      <activation>
+        <property>
+          <name>expression:project</name>
+          <value>projectDirectory.name</value>
         </property>
       </activation>
     </profile>
